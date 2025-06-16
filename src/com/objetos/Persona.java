@@ -1,12 +1,31 @@
+// Debemos crear una Persona una Propiedad que sea DNI y que tenga el número y la letra "12345678z"
+// Lo único que necesitamos es que no nos engañen. Si nos dan un DNI que no corresponde con su letra, lanzaremos un throw en el SETTER de dni.
+
 package com.objetos;
 
-import java.util.Scanner;
-
 public class Persona {
+    // El contructor lleva el nomnre de la clase
+    public Persona () {
+        // Cuando alguien ponga new Persona()
+        // Entra en este codigo
+        System.out.println("Soy una nueva persona!!!");
+        this.setGenero(tipoGenero.FEMENINO);
+    }
+    // otro constructor que recibiera los datos que yo quiera
+    public Persona (String nombre,String apellidos) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+    }
+    // 1) Campos de propiedad
+    // 2) Constructores de la clase
+    // 3) Getter y setter
+    // 4) Metodos
+    // debemos declarar las variables privadas de 
     public String nombre;
     public String apellidos;
     public int edad;
     private int dni;
+    private String dniConLetra;
 
     public String getNombre() {
         return this.nombre;
@@ -101,5 +120,22 @@ public class Persona {
         char letra = letrasDni.charAt(resultado);
         // System.out.println("Su letra del DNI es " + letra);
         return letra;
+    }
+    // dniConLetra.
+
+    public void dniConLetra (String dniConLetra) throws Exception{
+        char letraDni = dniConLetra.charAt(dniConLetra.length() - 1);
+         String temp = dniConLetra.substring(0, dniConLetra.length() - 1);
+        int numeroDni = Integer.parseInt(temp);
+        int resultado = (numeroDni - (numeroDni / 23) * 23);
+        String letrasDni = "TRWAGMYFPDXBNJZSQVHLCKET";
+        char letra = letrasDni.charAt(resultado);
+        
+
+        if (letraDni == letra){
+                this.dniConLetra = dniConLetra;
+            }else{
+                throw new Exception("la letra del DNI es incorrecta");
+            }
     }
 }
