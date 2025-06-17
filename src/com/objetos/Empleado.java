@@ -10,6 +10,31 @@ package com.objetos;
 
 public class Empleado extends Persona {
     private int salarioMinimo;
+    private int diasVacaciones;
+
+
+    // Quiero nombre apellidos y salario minimo, metodo que no se piede sobrescribir.
+
+    
+
+    @Override
+    public String toString(){
+        return this.getNombreCompleto()+" "+this.salarioMinimo;
+    }
+
+    public final void metodoFinal () {
+        System.out.println("Soy un método final");;
+    }
+
+    public int getDiasVacaciones() {
+        return this.diasVacaciones;
+    }
+
+    public void setDiasVacaciones(int diasVacaciones) {
+        this.diasVacaciones = diasVacaciones;
+    }
+
+    
 
     public int getSalarioMinimo() {
         return this.salarioMinimo;

@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import com.objetos.Director;
 import com.objetos.Empleado;
 import com.objetos.Persona;
@@ -14,6 +17,7 @@ public class App {
             emp.setApellidos("Empleado");
             emp.setSueldo(88888888);
             System.out.println(emp.getNombreCompleto());
+           
 
             // creamos un objeto
             Persona tryion = new Persona("Turion","Lamnister");
@@ -35,12 +39,27 @@ public class App {
         person.dividirNumeros(10, 1);
         System.out.println(person.nombre+person.apellidos+person.edad);
         System.out.println(person.getNombre()+" "+person.getApellidos()+"Edad: "+ person.getEdad());
-
         person.dniConLetra("12345678Y");
+        
 
         } catch (Exception e) {
             System.out.println("Error:" + e.getMessage());
         }
+
+        Empleado emp2 = new Empleado();
+        emp2.setApellidos("ayala");
+        emp2.setNombre("juan");
+       System.out.println(emp2.toString());
+
+       ArrayList <Empleado> empleados = new ArrayList<Empleado>();
+       Empleado emp1 = new Empleado();
+       emp1.setNombre("empleado 1 ");
+       emp1.setApellidos("empleado 1");
+       empleados.add(emp1);
        
+       
+       emp2.setNombre("empleado 2 ");
+       emp2.setApellidos("empleado 2");
+       empleados.add(emp2);
     }
 }
