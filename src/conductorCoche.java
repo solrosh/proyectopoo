@@ -21,26 +21,23 @@
 // Acelerará de 50 en 50 y no podremos superar la velocidad máxima.
 
 import com.objetos.Coche;
+import com.objetos.CocheDeportivo;
 
 public class conductorCoche {
     public static void main (String[] srt) {
-        Coche car1 = new Coche();
-        car1.setMarca("");
-        car1.setModelo("");
-        car1.setVelocidadMax(180);
+        CocheDeportivo car1 = new CocheDeportivo();
+        car1.setMarca("Rayo");
+        car1.setModelo("McQueen");
+        
         car1.arrancar();
-        car1.setVelocidad(5);
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.acelerar();
-            car1.frenar();
-            car1.frenar();
-            car1.frenar();
-            car1.frenar();
+        System.out.println(car1);
+        car1.acelerar();
+        car1.acelerar();
+        car1.frenar();
+        car1.turbo();
+        car1.frenar();
+        car1.frenar(true);
+        car1.acelerar();
+        // car1.frenar();
     }
 }

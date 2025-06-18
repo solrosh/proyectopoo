@@ -8,6 +8,12 @@ public class Coche {
     public String arrancar;
     public int frenar;
     public int acelerar;
+    protected boolean cocheArrancado;
+    public Coche () {
+        this.velocidad = 0;
+        // this.arrancar = false;
+        this.velocidadMax = 180;
+    }
 
     public String getMarca() {
         return this.marca;
@@ -29,7 +35,7 @@ public class Coche {
         return this.velocidad;
     }
 
-    public void setVelocidad(int velocidad) {
+    protected void setVelocidad(int velocidad) {
         this.velocidad = velocidad;
     }
 
@@ -44,6 +50,7 @@ public class Coche {
     public void arrancar(){
         // arrancar = 0 // Apagado
         // arrancar = 1 // encendido
+        this.velocidad = 20;
         System.out.println("Arrancando...");
     }
     
@@ -61,11 +68,25 @@ public class Coche {
     }
     public void frenar () {
         if (velocidad==0 ) {
-            System.out.println("Aparcao");
+            System.out.println("Coche parado");
         }else {
         frenar = 10;
         velocidad-=frenar;
         System.out.println(velocidad+" km/h");}
     }
 
+    public int frenar (boolean atope) {
+        System.out.println("Frenada a tope y apagado");
+        this.velocidad = 0;
+        // this.arrancar = false;
+        System.out.println("velocidad:"+this.velocidad);
+        return 0;
+        
+    }
+
+    //Sobreescribimos el metodo toString() para hacer mas agradable el dibujo del coche.
+    @Override
+    public String toString(){
+        return this.marca+ " "+ this.modelo+",Velocidad: "+this.velocidad;
+    }
 }
