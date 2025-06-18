@@ -28,7 +28,6 @@ import com.objetos.Mes;
 public class Clima {
     public static void main(String [] srt) {
         Random random = new Random();
-        int numeroRandom = random.nextInt(40)+1;
         String [] meses = new String[] {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"}; 
         for (int i=0;i<12;i++){
             Mes mes = new Mes();
@@ -36,7 +35,7 @@ public class Clima {
             System.out.print("Nombre del mes: ");
             String nombre = meses[i];
             System.out.print("Temperatura maxima: ");
-            Integer tempMax = random.nextInt();
+            Integer tempMax = random.nextInt(40);
             System.out.print("Temperatura minima: ");
             Integer tempMin = random.nextInt();
             mes.setNombreMes(nombre);
@@ -47,6 +46,5 @@ public class Clima {
         for (Mes m: meses) {
             System.out.println(m);
         }
-        System.out.println(numeroRandom);
     }
 }
